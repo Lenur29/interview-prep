@@ -56,5 +56,17 @@
       "enabled": true,
       "indentStyle": "space"
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["apps/api/**/*.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
 }

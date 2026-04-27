@@ -10,7 +10,12 @@
     "dev": "nest start --watch",
     "start": "node dist/src/main",
     "test": "vitest run",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset"
   },
   "dependencies": {
     "@apollo/server": "^5.0.0",
@@ -20,6 +25,8 @@
     "@nestjs/core": "^11.1.0",
     "@nestjs/graphql": "^13.0.0",
     "@nestjs/platform-express": "^11.1.0",
+    "@prisma/client": "^6.0.0",
+    "dotenv": "^17.0.0",
     "graphql": "^16.10.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
@@ -31,6 +38,7 @@
     "@swc/cli": "^0.7.0",
     "@swc/core": "^1.10.0",
     "@types/node": "^24.0.0",
+    "prisma": "^6.0.0",
     "typescript": "catalog:",
     "vitest": "^2.0.0"
   }

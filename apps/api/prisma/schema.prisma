@@ -1,0 +1,109 @@
+// Prisma schema for interview-prep app.
+// Domain model: User, Topic, Question, Attempt, Note.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// -------------------- Enums --------------------
+
+enum Track {
+  js
+  react
+}
+
+enum Difficulty {
+  junior
+  middle
+  senior
+}
+
+enum SelfRating {
+  unknown
+  partial
+  known
+}
+
+// -------------------- Models --------------------
+
+model User {
+  id          String   @id @default(uuid()) @db.Uuid
+  email       String   @unique
+  displayName String?
+  avatarUrl   String?
+  createdAt   DateTime @default(now())
+
+  attempts Attempt[]
+  notes    Note[]
+
+  @@map("users")
+}
+
+model Topic {
+  id          String   @id @default(uuid()) @db.Uuid
+  slug        String   @unique
+  title       String
+  description String?
+  track       Track    @default(js)
+  order       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  questions Question[]
+
+  @@map("topics")
+}
+
+model Question {
+  id          String     @id @default(uuid()) @db.Uuid
+  slug        String     @unique
+  topicId     String     @db.Uuid
+  topic       Topic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  difficulty  Difficulty
+  question    String
+  answer      String
+  explanation String?
+  code        String?
+  tags        String[]   @default([])
+  order       Int
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  attempts Attempt[]
+  notes    Note[]
+
+  @@index([topicId])
+  @@index([tags], type: Gin)
+  @@map("questions")
+}
+
+model Attempt {
+  id         String     @id @default(uuid()) @db.Uuid
+  userId     String     @db.Uuid
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String     @db.Uuid
+  question   Question   @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selfRating SelfRating
+  createdAt  DateTime   @default(now())
+
+  @@index([userId, questionId, createdAt(sort: Desc)])
+  @@map("attempts")
+}
+
+model Note {
+  userId     String   @db.Uuid
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String   @db.Uuid
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  body       String
+  updatedAt  DateTime @updatedAt
+
+  @@id([userId, questionId])
+  @@map("notes")
+}
