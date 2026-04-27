@@ -1,0 +1,37 @@
+{
+  "name": "@interview-prep/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "NestJS GraphQL API for interview-prep app",
+  "type": "commonjs",
+  "main": "dist/src/main.js",
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "start": "node dist/src/main",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@as-integrations/express5": "^1.1.2",
+    "@nestjs/apollo": "^13.0.0",
+    "@nestjs/common": "^11.1.0",
+    "@nestjs/core": "^11.1.0",
+    "@nestjs/graphql": "^13.0.0",
+    "@nestjs/platform-express": "^11.1.0",
+    "graphql": "^16.10.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.1.0",
+    "@swc/cli": "^0.7.0",
+    "@swc/core": "^1.10.0",
+    "@types/node": "^24.0.0",
+    "typescript": "catalog:",
+    "vitest": "^2.0.0"
+  }
+}

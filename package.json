@@ -25,6 +25,10 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@apollo/protobufjs",
+      "@nestjs/core",
+      "@swc/core",
+      "esbuild",
       "lefthook"
     ]
   }
