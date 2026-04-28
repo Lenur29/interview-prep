@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  /* — Neutral grays in OKLCH — */
+  --color-bg: oklch(99% 0 0);
+  --color-surface: oklch(100% 0 0);
+  --color-surface-muted: oklch(97% 0 0);
+  --color-border: oklch(92% 0 0);
+  --color-text: oklch(20% 0 0);
+  --color-text-muted: oklch(45% 0 0);
+  --color-text-subtle: oklch(60% 0 0);
+
+  /* — Indigo accent — */
+  --color-accent: oklch(55% 0.2 265);
+  --color-accent-hover: oklch(50% 0.2 265);
+  --color-accent-bg: oklch(96% 0.03 265);
+
+  /* — Used for self-rating buttons — */
+  --color-success: oklch(65% 0.15 145);
+  --color-warning: oklch(75% 0.15 75);
+  --color-danger: oklch(60% 0.2 25);
+
+  /* — Fonts — */
+  --font-sans: "Geist Variable", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SF Mono", monospace;
+}
+
+html,
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
