@@ -1,3 +1,4 @@
+import cn from 'clsx';
 import { type SVGAttributes, useId } from 'react';
 
 import './styles.css';
@@ -26,7 +27,7 @@ const LemurLogo = ({
       aria-label={ariaLabel}
       width={size}
       height={size}
-      className={className}
+      className={cn('lemur-svg', className)}
       style={style}
       {...rest}
     >
