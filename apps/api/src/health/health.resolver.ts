@@ -34,7 +34,7 @@ export class HealthResolver {
 
     return {
       status: 'ok',
-      service: '@interview-prep/api',
+      service: '@lemur-js/api',
       database,
       timestamp: new Date(),
     };

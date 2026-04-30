@@ -1,8 +1,8 @@
 {
-  "name": "@interview-prep/api",
+  "name": "@lemur-js/api",
   "version": "0.0.0",
   "private": true,
-  "description": "NestJS GraphQL API for interview-prep app",
+  "description": "NestJS GraphQL API for Lemur",
   "type": "commonjs",
   "main": "dist/src/main.js",
   "scripts": {

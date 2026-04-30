@@ -1,4 +1,4 @@
-// Prisma schema for interview-prep app.
+// Prisma schema for Lemur.
 // Domain model: User, Topic, Question, Attempt, Note.
 
 generator client {

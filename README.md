@@ -1,4 +1,4 @@
-# Interview Prep
+# Lemur
 
 Full-stack web app for JavaScript interview preparation. Topic-based questions with self-rating and progress tracking.
 

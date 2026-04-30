@@ -1,6 +1,8 @@
-import { Code, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Link, NavLink, Outlet } from 'react-router';
+
 import { RoutePath } from '@/shared/config/router/constants';
+import LemurLogo from '@/shared/ui/lemur-logo';
 
 const navItems = [
   { to: RoutePath.Dashboard, label: 'Dashboard' },
@@ -13,9 +15,9 @@ const AppLayout = () => {
   return (
     <div className="min-h-screen bg-bg text-text">
       <header className="border-b border-border bg-surface">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 md:px-6">
-          <Link to={RoutePath.Dashboard} aria-label="Interview Prep">
-            <Code size={36} color="blue" />
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 md:px-6">
+          <Link to={RoutePath.Dashboard} aria-label="Lemur">
+            <LemurLogo size={80} />
           </Link>
 
           <nav className="hidden items-center gap-5 text-sm text-text-muted md:flex">

@@ -1,25 +1,25 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: interview-prep-postgres
+    container_name: lemur-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: interview_prep
-      POSTGRES_PASSWORD: interview_prep_dev
-      POSTGRES_DB: interview_prep
+      POSTGRES_USER: lemur
+      POSTGRES_PASSWORD: lemur_dev
+      POSTGRES_DB: lemur
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U interview_prep -d interview_prep"]
+      test: ["CMD-SHELL", "pg_isready -U lemur -d lemur"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   adminer:
     image: adminer:latest
-    container_name: interview-prep-adminer
+    container_name: lemur-adminer
     restart: unless-stopped
     ports:
       - "8080:8080"

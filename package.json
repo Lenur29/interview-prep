@@ -1,8 +1,8 @@
 {
-  "name": "interview-prep",
+  "name": "lemur-js",
   "version": "0.0.0",
   "private": true,
-  "description": "Full-stack interview prep app — JavaScript interview questions with topic-based practice and progress tracking",
+  "description": "Lemur — full-stack interview prep app with JavaScript questions, topic-based practice, and progress tracking",
   "packageManager": "pnpm@10.33.2",
   "engines": {
     "node": ">=24"
