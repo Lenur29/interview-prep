@@ -1,0 +1,9 @@
+mutation TestCreateGroup($input: TestCreateGroupInput!) {
+  testCreateGroup(input: $input) {
+    id
+    name
+    startYear
+    studyForm
+    programId
+  }
+}

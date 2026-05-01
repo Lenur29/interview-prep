@@ -1,0 +1,6 @@
+mutation CreateBinaryFile($input: CreateBinaryFileInput!) {
+  createBinaryFile(input: $input) {
+    isPrivate
+    ...BinaryFileFields
+  }
+}

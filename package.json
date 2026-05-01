@@ -1,38 +1,51 @@
 {
-  "name": "lemur-js",
-  "version": "0.0.0",
+  "name": "lemurjs",
+  "version": "1.0.0",
   "private": true,
-  "description": "Lemur — full-stack interview prep app with JavaScript questions, topic-based practice, and progress tracking",
-  "packageManager": "pnpm@10.33.2",
-  "engines": {
-    "node": ">=24"
-  },
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "test": "turbo run test",
+    "dev": "pnpm --parallel --filter './apps/*' dev",
+    "dev:api": "pnpm --filter @lm/api dev",
+    "dev:app": "pnpm --filter @lm/app dev",
+    "dev:cli": "pnpm --filter @lm/cli dev",
+    "start:api": "pnpm --filter @lm/api start",
+    "build": "pnpm --filter './apps/*' build",
+    "build:api": "turbo run build --filter=@lm/api",
+    "build:app": "turbo run build --filter=@lm/app",
+    "preview:app": "pnpm --filter @lm/app preview",
+    "codegen": "turbo run codegen --filter=@lm/graphql",
+    "lint": "turbo run lint",
+    "lint:app": "turbo run lint --filter=@lm/app",
     "type-check": "turbo run type-check",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
-    "prepare": "lefthook install"
+    "type-check:app": "turbo run type-check --filter=@lm/app",
+    "type-check:api": "turbo run type-check --filter=@lm/api",
+    "test:e2e": "pnpm --filter @lm/e2e test",
+    "test:e2e:ui": "pnpm --filter @lm/e2e test:ui",
+    "test:e2e:report": "pnpm --filter @lm/e2e report",
+    "dev:up": "infra/local/up.sh",
+    "dev:down": "rm -f \"$HOME/.config/caddy/sites.d/lemurjs.caddy\" && caddy reload --config \"$HOME/.config/caddy/Caddyfile\" --address localhost:2019"
   },
-  "devDependencies": {
-    "@biomejs/biome": "catalog:",
-    "lefthook": "catalog:",
-    "turbo": "catalog:",
-    "typescript": "catalog:"
-  },
+  "packageManager": "pnpm@10.30.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@apollo/protobufjs",
+      "@firebase/util",
       "@nestjs/core",
-      "@prisma/client",
-      "@prisma/engines",
       "@swc/core",
+      "bcrypt",
+      "es5-ext",
       "esbuild",
-      "lefthook",
-      "prisma"
+      "protobufjs"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.13",
+    "globals": "^16.5.0",
+    "tsdown": "^0.15.12",
+    "turbo": "^2.8.10",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "24",
+    "pnpm": "10"
   }
 }

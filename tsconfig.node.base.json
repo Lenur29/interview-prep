@@ -1,0 +1,28 @@
+//
+// @pkg DeepVision TSConfig Base
+// @version 2.0.0
+// @author DV Software <code@deepvision.software>
+//
+// Documentation reference: https://www.typescriptlang.org/tsconfig
+// Node 24 target: ES2024
+//
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": ["ES2024"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

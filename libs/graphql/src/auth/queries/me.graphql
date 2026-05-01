@@ -1,0 +1,36 @@
+
+query Me {
+  me {
+    id
+    email
+    firstName
+    lastName
+    fullName
+    gender
+    sessionHash
+    avatar {
+      ...ImageFields
+    }
+    resolvedPermissions
+    permissions
+    is2faEnabled
+    isOtpEnabled
+    pushNotificationsEnabled
+    studentProfiles {
+      id
+      isDistanceLearning
+      isLeader
+      position
+      courseNumber
+      group {
+        id
+        name
+      }
+    }
+    roles {
+      id
+      title
+      description
+    }
+  }
+}

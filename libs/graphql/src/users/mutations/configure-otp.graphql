@@ -1,0 +1,10 @@
+mutation ConfigureOtp($input: ConfigureOtpInput!) {
+  configureOtp(input: $input) {
+    user {
+      id
+      isOtpEnabled
+    }
+    secret
+    otpAuthUrl
+  }
+}

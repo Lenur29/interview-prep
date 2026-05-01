@@ -1,27 +1,24 @@
 {
   "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "libReplacement": false,
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "jsx": "preserve",
+
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
-
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-
-    "target": "ES2023",
-    "lib": ["ES2023"],
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "incremental": true,
-    "composite": false
-  },
-  "exclude": ["node_modules", "dist", "build", ".turbo", "coverage"]
+    "noFallthroughCasesInSwitch": true
+  }
 }

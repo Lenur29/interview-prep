@@ -1,0 +1,6 @@
+query Image($id: String!) {
+  image(id: $id) {
+    id
+    url
+  }
+}

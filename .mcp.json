@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "nuxt-ui": {
+      "command": "npx",
+      "args": ["@riyenz/nuxt-ui-mcp-server"]
+    },
+    "figma-desktop": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://root:root@localhost:6720/app"
+      ]
+    }
+  }
+}

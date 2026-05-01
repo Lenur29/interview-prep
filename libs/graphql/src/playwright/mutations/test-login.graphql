@@ -1,0 +1,9 @@
+mutation TestLogin($email: String!) {
+  testLogin(email: $email) {
+    id
+    firstName
+    lastName
+    fullName
+    email
+  }
+}

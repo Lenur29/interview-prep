@@ -1,0 +1,14 @@
+fragment ImageFields on Image {
+  id
+  renditions {
+    id
+    type
+    url
+    meta {
+      filesize
+      mimeType
+      width
+      height
+    }
+  }
+}

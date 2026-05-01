@@ -1,0 +1,13 @@
+query listUsers($page: Int, $limit: Int, $orderBy: UsersOrderBy, $filter: UsersFilter) {
+  users(page: $page, limit: $limit, orderBy: $orderBy, filter: $filter) {
+    items {
+      ...UserFields
+    }
+    pageInfo {
+      page
+      limit
+      totalItems
+      totalPages
+    }
+  }
+}

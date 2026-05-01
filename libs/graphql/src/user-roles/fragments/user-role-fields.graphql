@@ -1,0 +1,7 @@
+fragment UserRoleFields on UserRole {
+  id
+  userId
+  roleId
+  createdAt
+  updatedAt
+}

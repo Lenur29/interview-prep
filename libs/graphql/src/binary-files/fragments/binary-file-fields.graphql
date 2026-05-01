@@ -1,0 +1,10 @@
+fragment BinaryFileFields on BinaryFile {
+  id
+  url
+  downloadUrl
+  meta {
+    name
+    mimeType
+    size
+  }
+}

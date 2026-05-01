@@ -1,0 +1,6 @@
+subscription SessionLoggedOut($sessionHash: String!) {
+  sessionLoggedOut(sessionHash: $sessionHash) {
+    sessionHash
+    logoutAt
+  }
+}

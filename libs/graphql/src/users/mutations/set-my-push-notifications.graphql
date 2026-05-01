@@ -1,0 +1,6 @@
+mutation SetMyPushNotifications($input: SetMyPushNotificationsInput!) {
+  setMyPushNotifications(input: $input) {
+    id
+    pushNotificationsEnabled
+  }
+}

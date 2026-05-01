@@ -1,0 +1,6 @@
+mutation CreateImage($input: CreateImageInput!) {
+  createImage(input: $input) {
+    id
+    url
+  }
+}

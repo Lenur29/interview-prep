@@ -1,0 +1,5 @@
+query BinaryFilesByIds($ids: [String!]!) {
+  binaryFilesByIds(ids: $ids) {
+    ...BinaryFileFields
+  }
+}

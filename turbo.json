@@ -1,26 +1,43 @@
 {
-  "$schema": "https://turborepo.dev/schema.json",
-  "ui": "tui",
+  "$schema": "https://turbo.build/schema.json",
   "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "cache": true
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".output/**"],
-      "inputs": ["$TURBO_DEFAULT$", "src/**", "!**/*.test.*", "!**/*.spec.*"]
-    },
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
-    },
-    "lint": {
-      "outputs": []
+    "preview": {
+      "cache": false,
+      "persistent": true
     },
     "type-check": {
       "dependsOn": ["^type-check"],
-      "outputs": ["*.tsbuildinfo"]
+      "outputs": [],
+      "cache": true
+    },
+    "codegen": {
+      "outputs": ["src/types.ts"],
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "outputs": [],
+    },
+    "icons": {
+      "outputs": ["src/assets/icons/index.ts"],
+      "cache": true
+    },
+    "langs": {
+      "outputs": [],
+      "cache": false
+    },
+    "test:e2e": {
+      "outputs": ["playwright-report/**", "test-results/**"],
+      "cache": false
     }
   }
 }

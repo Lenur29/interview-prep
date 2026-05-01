@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "setup":   "./infra/conductor/setup.sh",
+    "run":     "pnpm run dev:api",
+    "archive": "./infra/conductor/archive.sh"
+  }
+}

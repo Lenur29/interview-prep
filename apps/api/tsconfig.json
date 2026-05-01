@@ -1,12 +1,16 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.node.base.json",
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "verbatimModuleSyntax": false,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "baseUrl": "./",
+    "rootDir": "./src",
+    "removeComments": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "@lm/permissions": ["../../libs/permissions/src"],
+      "@lm/permissions/*": ["../../libs/permissions/src/*"]
+    }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,0 +1,8 @@
+mutation TestDeleteUserPermanently($userId: String!) {
+  testDeleteUserPermanently(userId: $userId) {
+    success
+    userId
+    userRolesDeleted
+    sessionsDeleted
+  }
+}

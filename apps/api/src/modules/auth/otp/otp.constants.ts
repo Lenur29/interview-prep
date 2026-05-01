@@ -1,0 +1,1 @@
+export const OTP_SERVICE_TOKEN = 'OTP_SERVICE';

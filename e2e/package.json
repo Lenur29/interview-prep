@@ -1,0 +1,31 @@
+{
+  "name": "@lm/e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "test": "playwright test",
+    "test:ui": "PW_LOG=1 playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:headed:debug": "PWDEBUG=console playwright test --headed --max-failures=1 --workers=1",
+    "test:preview": "PW_PREVIEW=1 playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@faker-js/faker": "catalog:",
+    "@pcg/auth": "catalog:",
+    "@pcg/dotenv-yaml": "catalog:",
+    "@pcg/text-kit": "catalog:",
+    "@lm/graphql": "workspace:*",
+    "graphql": "catalog:",
+    "rxjs": "catalog:",
+    "winston": "catalog:"
+  }
+}

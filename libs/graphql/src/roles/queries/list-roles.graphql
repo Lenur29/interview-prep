@@ -1,0 +1,9 @@
+query listRoles {
+  roles {
+    id
+    title
+    type
+    description
+    permissions
+  }
+}

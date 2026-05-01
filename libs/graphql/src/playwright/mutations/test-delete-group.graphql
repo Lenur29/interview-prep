@@ -1,0 +1,6 @@
+mutation TestDeleteGroup($id: String!) {
+  testDeleteGroup(id: $id) {
+    success
+    id
+  }
+}

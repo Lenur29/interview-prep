@@ -1,0 +1,9 @@
+mutation Disable2fa($input: Disable2faInput!) {
+  disable2fa(input: $input) {
+    user {
+      id
+      isOtpEnabled
+      is2faEnabled
+    }
+  }
+}

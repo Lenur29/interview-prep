@@ -1,0 +1,10 @@
+mutation TestCreateStudent($input: TestCreateStudentInput!) {
+  testCreateStudent(input: $input) {
+    id
+    email
+    fullName
+    telegramChatId
+    groupId
+    studentProfileId
+  }
+}

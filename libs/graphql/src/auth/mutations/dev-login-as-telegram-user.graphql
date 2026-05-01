@@ -1,0 +1,11 @@
+mutation devLoginAsTelegramUser($input: DevLoginAsTelegramUserInput!) {
+  devLoginAsTelegramUser(input: $input) {
+    token
+    user {
+      id
+      email
+      firstName
+      lastName
+    }
+  }
+}

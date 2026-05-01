@@ -1,0 +1,40 @@
+//
+// @pkg 📦 DeepVision TSConfig (Vite + Vue)
+// @version 📍 1.0.0
+// @author 🐳 DV Software <code@deepvision.software>
+//
+// Documentation reference: https://www.typescriptlang.org/tsconfig
+// Typescript versions: https://devblogs.microsoft.com/typescript/
+//
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Typescript recommended
+    "esModuleInterop": false,
+
+    // Debug info
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+
+    // Files will be emitted into this directory
+    "outDir": "dist",
+
+    // Set path alias for src directory
+    // see also resolve aliases section in vue.config.js
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["packages/core/src/*"],
+      "@/*": ["apps/sandbox/src/*"],
+      "@tests/*": ["tests/*"],
+      "@pcg/*": ["packages/*/src"],
+    },
+    "typeRoots": ["node_modules/@types", "types", "tests/@types"]
+  }
+}

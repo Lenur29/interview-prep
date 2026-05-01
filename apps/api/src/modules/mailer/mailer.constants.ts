@@ -1,0 +1,1 @@
+export const MAILER_TRANSPORT = Symbol('MAILER_TRANSPORT');

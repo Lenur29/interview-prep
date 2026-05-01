@@ -1,0 +1,13 @@
+query ListUserRoles($filter: UserRolesFilter, $page: Int, $limit: Int) {
+  userRoles(filter: $filter, page: $page, limit: $limit) {
+    items {
+      ...UserRoleFields
+    }
+    pageInfo {
+      page
+      limit
+      totalItems
+      totalPages
+    }
+  }
+}
